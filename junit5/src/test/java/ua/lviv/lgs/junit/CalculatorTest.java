@@ -107,25 +107,23 @@ public class CalculatorTest {
             "10, 86",
     })
     @DisplayName("Test few cases for adding...")
-    public void addFiewTestCalses(int a, int b){
+    public void addFiewTestCalses(int a, int b) {
         assertThrows(IllegalArgumentException.class, () -> calculator.substract(a, b));
     }
 
-
     @ParameterizedTest
     @EnumSource(Seasons.class)
-    public void seasonsTest(Seasons season){
+    public void seasonsTest(Seasons season) {
         System.out.println(season);
     }
 
-    enum Seasons{
+    enum Seasons {
         SPRING, SUMMER, FALL, WINTER
     }
 
-
     @ParameterizedTest
-    @ValueSource(ints = { 1,3,5,8})
-    public void seasonsTest(int val){
+    @ValueSource(ints = {1, 3, 5, 8})
+    public void seasonsTest(int val) {
         System.out.println(val);
     }
 
