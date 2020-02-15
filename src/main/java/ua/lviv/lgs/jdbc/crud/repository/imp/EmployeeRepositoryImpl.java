@@ -1,5 +1,7 @@
 package ua.lviv.lgs.jdbc.crud.repository.imp;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import ua.lviv.lgs.jdbc.crud.entity.Employee;
 import ua.lviv.lgs.jdbc.crud.mapper.EmployeeMapper;
 import ua.lviv.lgs.jdbc.crud.repository.EmployeeRepository;
@@ -16,6 +18,7 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
     public static final String CREATE = "INSERT INTO employee2 (first_name, last_name) values(?,?)";
     public static final String UPDATE_BY_ID = "UPDATE employee SET first_name=?, last_name=? WHERE id=?";
     private static String READ_BY_ID = "select * from employee where id =?";
+    private final Logger log = Logger.getLogger(EmployeeRepositoryImpl.class);
     private Connection connection;
 
     public EmployeeRepositoryImpl(Connection connection) {
@@ -23,16 +26,22 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
     }
 
     public void save(Employee employee) {
+        log.setLevel(Level.ERROR);
+        log.info("save employee ...");
         PreparedStatement statement = null;
         try {
+            log.debug("try to prepare statement ");
             statement = connection.prepareStatement(CREATE);
+            log.debug("statement is ready ... ");
 
             statement.setString(1, employee.getFirstName());
             statement.setString(2, employee.getLastName());
+            log.debug("exequting query ... ");
             statement.execute();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            log.error("after trying to exequte query", e);
+//            e.printStackTrace();
         } finally {
             try {
                 if (statement != null) {
@@ -51,7 +60,6 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
         statement.setString(2, employee.getLastName());
         statement.execute();
     }
-
     private static String DELETE_BY_ID = "delete from employee where id=?";
 
     public void delete(int id) throws SQLException {
@@ -70,7 +78,6 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
         preparedStatement.close();
         return result;
     }
-
     private static String READ_ALL = "select * from employee";
 
     public List<Employee> findAll() throws SQLException {
