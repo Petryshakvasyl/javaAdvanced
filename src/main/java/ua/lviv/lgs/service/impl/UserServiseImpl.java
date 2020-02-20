@@ -1,8 +1,9 @@
-package ua.lviv.lgs.service;
+package ua.lviv.lgs.service.impl;
 
 import ua.lviv.lgs.domain.User;
 import ua.lviv.lgs.repository.UserRepository;
 import ua.lviv.lgs.repository.impl.UserRepositoryImp;
+import ua.lviv.lgs.service.UserService;
 
 import java.util.List;
 

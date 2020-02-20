@@ -3,7 +3,7 @@ package ua.lviv.lgs;
 import ua.lviv.lgs.connection.ConnectionManager;
 import ua.lviv.lgs.domain.User;
 import ua.lviv.lgs.service.UserService;
-import ua.lviv.lgs.service.UserServiseImpl;
+import ua.lviv.lgs.service.impl.UserServiseImpl;
 
 import java.util.List;
 
