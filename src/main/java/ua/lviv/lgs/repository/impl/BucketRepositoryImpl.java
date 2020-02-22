@@ -18,9 +18,17 @@ public class BucketRepositoryImpl implements BucketRepository {
 
     private Connection connection;
     private PreparedStatement preparedStatement;
+    private static BucketRepository instance;
 
     public BucketRepositoryImpl() {
         connection = ConnectionManager.openConnection();
+    }
+
+    public static BucketRepository getInstance() {
+        if (instance == null) {
+            instance = new BucketRepositoryImpl();
+        }
+        return instance;
     }
 
     @Override

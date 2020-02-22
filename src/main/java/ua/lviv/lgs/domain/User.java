@@ -8,20 +8,31 @@ public class User {
     private String lastName;
     private String email;
     private String role;
+    private String password;
 
-    public User(String firstName, String lastName, String email, String role) {
+    public User(String firstName, String lastName, String email, String role, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.role = role;
+        this.password = password;
     }
 
-    public User(Integer id, String firstName, String lastName, String email, String role) {
+    public User(Integer id, String firstName, String lastName, String email, String role, String password) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.role = role;
+        this.password = password;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public Integer getId() {

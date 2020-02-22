@@ -1,12 +1,14 @@
 package ua.lviv.lgs.connection;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
+import org.apache.log4j.Logger;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConnectionManager {
+
+    private static Logger log = Logger.getLogger(ConnectionManager.class);
 
     private final static String USER_NAME = "user";
     private final static String USER_PASSWORD = "1111";
@@ -18,6 +20,7 @@ public class ConnectionManager {
     }
 
     public static Connection openConnection() {
+        log.info("open connection");
         if (connection != null) {
             return connection;
         } else {
@@ -34,13 +37,13 @@ public class ConnectionManager {
     }
 
     public static void closeConnection() {
-        Connection connection = ConnectionManager.openConnection();
-        try {
-            Class connectionClass = Class.forName("java.sql.Connection");
-            Method method = connectionClass.getDeclaredMethod("close");
-            method.invoke(connection);
-        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | ClassNotFoundException e) {
-            e.printStackTrace();
+        log.info("close connection");
+        if (connection != null) {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

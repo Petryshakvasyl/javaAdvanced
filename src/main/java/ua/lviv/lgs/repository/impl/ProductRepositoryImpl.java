@@ -18,9 +18,17 @@ public class ProductRepositoryImpl implements ProductRepository {
 
 	private Connection connection;
 	private PreparedStatement preparedStatement;
+	private static ProductRepository instance;
 
 	public ProductRepositoryImpl() {
 		connection = ConnectionManager.openConnection();
+	}
+
+	public static ProductRepository getInstance() {
+		if (instance == null) {
+			instance = new ProductRepositoryImpl();
+		}
+		return instance;
 	}
 
 	@Override

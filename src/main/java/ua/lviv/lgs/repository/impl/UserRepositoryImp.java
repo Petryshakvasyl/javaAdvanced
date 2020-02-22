@@ -7,18 +7,28 @@ import ua.lviv.lgs.repository.UserRepository;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class UserRepositoryImp implements UserRepository {
-    private final static String CREATE = "insert into users(`email`,`first_name`, `last_name`, `role`) values (?,?,?,?)";
+    private final static String CREATE = "insert into users(`email`,`first_name`, `last_name`, `role`, `password`) values (?,?,?,?,?)";
     private final static String READ_BY_ID = "select * from users where id =?";
+    private final static String READ_BY_EMAIL = "select * from users where email =?";
     private static String UPDATE_BY_ID = "update users set email=?, first_name = ?, last_name = ?, role=?  where id = ?";
     private static String DELETE_BY_ID = "delete from users where id=?";
     private static String READ_ALL = "select * from users";
 
+    private static UserRepository userRepository;
     private Connection connection;
 
     public UserRepositoryImp() {
         this.connection = ConnectionManager.openConnection();
+    }
+
+    public static UserRepository getInstance() {
+        if (userRepository != null) {
+            return userRepository;
+        }
+        return new UserRepositoryImp();
     }
 
     @Override
@@ -30,6 +40,7 @@ public class UserRepositoryImp implements UserRepository {
             preparedStatement.setString(2, user.getFirstName());
             preparedStatement.setString(3, user.getLastName());
             preparedStatement.setString(4, user.getRole());
+            preparedStatement.setString(5, user.getPassword());
             preparedStatement.executeUpdate();
 
             ResultSet rs = preparedStatement.getGeneratedKeys();
@@ -55,7 +66,8 @@ public class UserRepositoryImp implements UserRepository {
             String firstName = result.getString("first_name");
             String lastName = result.getString("last_name");
             String role = result.getString("role");
-            user = new User(userId, email, firstName, lastName, role);
+            String password = result.getString("password");
+            user = new User(userId, email, firstName, lastName, role, password);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -105,7 +117,8 @@ public class UserRepositoryImp implements UserRepository {
                 String firstName = result.getString("first_name");
                 String lastName = result.getString("last_name");
                 String role = result.getString("role");
-                userRecords.add(new User(userId, email, firstName, lastName, role));
+                String password = result.getString("password");
+                userRecords.add(new User(userId, email, firstName, lastName, role, password));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -113,4 +126,26 @@ public class UserRepositoryImp implements UserRepository {
 
         return userRecords;
     }
+
+    @Override
+    public Optional<User> findByEmail(String email) {
+        User user = null;
+        PreparedStatement preparedStatement;
+        try {
+            preparedStatement = connection.prepareStatement(READ_BY_EMAIL);
+            preparedStatement.setString(1, email);
+            ResultSet result = preparedStatement.executeQuery();
+            result.next();
+            Integer userId = result.getInt("id");
+            String firstName = result.getString("first_name");
+            String lastName = result.getString("last_name");
+            String role = result.getString("role");
+            String password = result.getString("password");
+            user = new User(userId, email, firstName, lastName, role, password);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return Optional.ofNullable(user);
+    }
+
 }
