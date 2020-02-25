@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Optional;
 
 @WebServlet("/registration")
 public class RegistrationController extends HttpServlet {
@@ -32,13 +33,18 @@ public class RegistrationController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         log.info("post request");
-        String firstName = req.getParameter("firstName");
-        String lastName = req.getParameter("lastName");
+
         String email = req.getParameter("email");
-        String password = req.getParameter("password");
-        User user = new User(firstName, lastName, email, "USER", password);
-        log.debug("create new user " + user);
-        userService.save(user);
-        resp.sendRedirect("login");
+        Optional<User> fromDB = userService.findByEmail(email);
+        if (fromDB.isPresent()) {
+            resp.setStatus(422);
+        } else {
+            String firstName = req.getParameter("firstName");
+            String lastName = req.getParameter("lastName");
+            String password = req.getParameter("password");
+            User user = new User(firstName, lastName, email, "USER", password);
+            log.debug("create new user " + user);
+            userService.save(user);
+        }
     }
 }

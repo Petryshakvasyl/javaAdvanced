@@ -46,11 +46,11 @@ public class LoginController extends HttpServlet {
                 req.getRequestDispatcher("cabinet.jsp").forward(req, resp);
             } else {
                 log.debug("invalid password");
-                req.getRequestDispatcher("login.jsp").forward(req, resp);
+                resp.setStatus(401);
             }
         } else {
             log.debug("not found user with email: " + email);
-            req.getRequestDispatcher("login.jsp").forward(req, resp);
+            resp.setStatus(404);
         }
     }
 }

@@ -1,8 +1,10 @@
 package ua.lviv.lgs.repository.impl;
 
+import org.apache.log4j.Logger;
 import ua.lviv.lgs.connection.ConnectionManager;
 import ua.lviv.lgs.domain.User;
 import ua.lviv.lgs.repository.UserRepository;
+import ua.lviv.lgs.service.mappers.UserMapper;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -17,11 +19,13 @@ public class UserRepositoryImp implements UserRepository {
     private static String DELETE_BY_ID = "delete from users where id=?";
     private static String READ_ALL = "select * from users";
 
+    private Logger log = Logger.getLogger(UserRepositoryImp.class);
     private static UserRepository userRepository;
     private Connection connection;
-
+    private UserMapper userMapper;
     public UserRepositoryImp() {
         this.connection = ConnectionManager.openConnection();
+        this.userMapper = UserMapper.getInstance();
     }
 
     public static UserRepository getInstance() {
@@ -60,19 +64,15 @@ public class UserRepositoryImp implements UserRepository {
             preparedStatement = connection.prepareStatement(READ_BY_ID);
             preparedStatement.setInt(1, id);
             ResultSet result = preparedStatement.executeQuery();
-            result.next();
-            Integer userId = result.getInt("id");
-            String email = result.getString("email");
-            String firstName = result.getString("first_name");
-            String lastName = result.getString("last_name");
-            String role = result.getString("role");
-            String password = result.getString("password");
-            user = new User(userId, email, firstName, lastName, role, password);
+            if (result.next()) {
+                user = userMapper.getUser(result);
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return user;
     }
+
 
     @Override
     public User update(User user) {
@@ -88,7 +88,6 @@ public class UserRepositoryImp implements UserRepository {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return user;
     }
 
@@ -112,13 +111,7 @@ public class UserRepositoryImp implements UserRepository {
             preparedStatement = connection.prepareStatement(READ_ALL);
             ResultSet result = preparedStatement.executeQuery();
             while (result.next()) {
-                Integer userId = result.getInt("id");
-                String email = result.getString("email");
-                String firstName = result.getString("first_name");
-                String lastName = result.getString("last_name");
-                String role = result.getString("role");
-                String password = result.getString("password");
-                userRecords.add(new User(userId, email, firstName, lastName, role, password));
+                userRecords.add(userMapper.getUser(result));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -135,13 +128,10 @@ public class UserRepositoryImp implements UserRepository {
             preparedStatement = connection.prepareStatement(READ_BY_EMAIL);
             preparedStatement.setString(1, email);
             ResultSet result = preparedStatement.executeQuery();
-            result.next();
-            Integer userId = result.getInt("id");
-            String firstName = result.getString("first_name");
-            String lastName = result.getString("last_name");
-            String role = result.getString("role");
-            String password = result.getString("password");
-            user = new User(userId, email, firstName, lastName, role, password);
+            if (result.next()) {
+                log.debug("find user with email: " + email);
+                user = userMapper.getUser(result);
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
