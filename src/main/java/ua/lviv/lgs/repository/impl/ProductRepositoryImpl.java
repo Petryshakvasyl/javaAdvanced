@@ -20,7 +20,7 @@ public class ProductRepositoryImpl implements ProductRepository {
 	private PreparedStatement preparedStatement;
 	private static ProductRepository instance;
 
-	public ProductRepositoryImpl() {
+	private ProductRepositoryImpl() {
 		connection = ConnectionManager.openConnection();
 	}
 

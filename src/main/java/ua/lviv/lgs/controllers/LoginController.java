@@ -43,6 +43,7 @@ public class LoginController extends HttpServlet {
             if (user.getPassword().equals(password)) {
                 req.setAttribute("userEmail", email);
                 req.getSession().setAttribute("userEmail", email);
+                req.getSession().setAttribute("role", user.getRole());
                 req.getRequestDispatcher("cabinet.jsp").forward(req, resp);
             } else {
                 log.debug("invalid password");
