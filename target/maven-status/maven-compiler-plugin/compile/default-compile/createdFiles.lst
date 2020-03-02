@@ -1,8 +1,0 @@
-ua\lviv\lgs\servlet\controller\SimpleController.class
-ua\lviv\lgs\servlet\entity\User.class
-ua\lviv\lgs\servlet\filter\LogFilter.class
-ua\lviv\lgs\servlet\controller\CabinetController.class
-ua\lviv\lgs\servlet\controller\LoginController.class
-ua\lviv\lgs\servlet\controller\RegistrationController.class
-ua\lviv\lgs\servlet\service\impl\UserServiceImpl.class
-ua\lviv\lgs\servlet\service\UserService.class
