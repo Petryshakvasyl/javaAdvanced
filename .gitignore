@@ -1,3 +1,10 @@
+#folders
+.idea
+out
+target
+docs
+
+
 # Compiled class file
 *.class
 
