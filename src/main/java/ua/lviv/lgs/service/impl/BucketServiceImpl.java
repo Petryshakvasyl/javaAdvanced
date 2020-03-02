@@ -11,6 +11,15 @@ public class BucketServiceImpl implements BucketService {
 
     private BucketRepository bucketRepository;
 
+    private static BucketService instance;
+
+    public static BucketService getInstance() {
+        if (instance == null) {
+            instance = new BucketServiceImpl();
+        }
+        return instance;
+    }
+
     public BucketServiceImpl() {
         this.bucketRepository = BucketRepositoryImpl.getInstance();
     }

@@ -16,7 +16,7 @@
 
 </head>
 <body>
-
+  <jsp:include page="header.jsp"></jsp:include>
 	 <form id="product-form" name="products" action="products" method="POST">
         <div class="form-group">
           <label for="product">Name:</label>
