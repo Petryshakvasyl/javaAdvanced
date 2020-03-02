@@ -9,3 +9,4 @@
 * [lesson-07](https://github.com/Petryshakvasyl/javaAdvanced/tree/lesson-07)  (i_shop(bootstrap, ajax))
 * [lesson-08](https://github.com/Petryshakvasyl/javaAdvanced/tree/lesson-8)  (i_shop(products, logout))
 * [lesson-09](https://github.com/Petryshakvasyl/javaAdvanced/tree/lesson-9)  (i_shop(final))
+* [lesson-10](https://github.com/Petryshakvasyl/javaAdvanced/tree/lesson-10)  (git-advanced)
