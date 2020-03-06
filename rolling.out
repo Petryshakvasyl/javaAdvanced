@@ -1,0 +1,155 @@
+2020-03-06 13:24:35 [INFO ] ConnectionManager:23 - open connection
+2020-03-06 13:26:18 [INFO ] ConnectionManager:23 - open connection
+2020-03-06 13:27:00 [INFO ] ConnectionManager:23 - open connection
+2020-03-06 13:27:00 [INFO ] LoginController:35 - post request
+2020-03-06 13:27:00 [DEBUG] UserServiseImpl:62 - find user by emailsslichnyi@gmail.com
+2020-03-06 13:27:00 [DEBUG] UserRepositoryImp:132 - find user with email: sslichnyi@gmail.com
+2020-03-06 13:27:00 [DEBUG] LoginController:42 - user is present: User{id=2, firstName='sslichnyi@gmail.com', lastName='Sviatoslav', email='Slichnyi', role='USER'}
+2020-03-06 13:33:24 [INFO ] LogoutController:19 - get request
+2020-03-06 13:33:26 [INFO ] LoginController:35 - post request
+2020-03-06 13:33:26 [DEBUG] UserServiseImpl:62 - find user by emailsslichnyi@gmail.com
+2020-03-06 13:33:26 [DEBUG] UserRepositoryImp:132 - find user with email: sslichnyi@gmail.com
+2020-03-06 13:33:26 [DEBUG] LoginController:42 - user is present: User{id=2, firstName='sslichnyi@gmail.com', lastName='Sviatoslav', email='Slichnyi', role='USER'}
+2020-03-06 13:34:41 [INFO ] ConnectionManager:23 - open connection
+2020-03-06 13:34:41 [INFO ] AdminFilter:24 - filtering...
+2020-03-06 13:34:41 [DEBUG] FilterTool:42 - session is NOT a new. Session was started.
+2020-03-06 13:34:41 [DEBUG] AdminFilter:33 - user is authorized.
+2020-03-06 13:34:41 [DEBUG] ProductsController:28 - get request for products
+2020-03-06 13:34:41 [DEBUG] ProductsController:30 - products: [Product [id=1, name=Iphone XX, description=This is an expansive phone., price=1299.0], Product [id=2, name=Iphone 7, description=This is old version, price=560.0], Product [id=3, name=Iphone 9, description=The Future iphone, price=2999.0]]
+2020-03-06 13:34:41 [DEBUG] ProductsController:32 - forward
+2020-03-06 13:36:34 [INFO ] AdminFilter:24 - filtering...
+2020-03-06 13:36:34 [DEBUG] FilterTool:42 - session is NOT a new. Session was started.
+2020-03-06 13:36:34 [DEBUG] AdminFilter:33 - user is authorized.
+2020-03-06 13:36:34 [DEBUG] ProductsController:28 - get request for products
+2020-03-06 13:36:34 [DEBUG] ProductsController:30 - products: [Product [id=1, name=Iphone XX, description=This is an expansive phone., price=1299.0], Product [id=2, name=Iphone 7, description=This is old version, price=560.0], Product [id=3, name=Iphone 9, description=The Future iphone, price=2999.0]]
+2020-03-06 13:36:34 [DEBUG] ProductsController:32 - forward
+2020-03-06 13:38:02 [INFO ] AdminFilter:24 - filtering...
+2020-03-06 13:38:02 [DEBUG] FilterTool:42 - session is NOT a new. Session was started.
+2020-03-06 13:38:02 [DEBUG] AdminFilter:33 - user is authorized.
+2020-03-06 13:38:02 [DEBUG] ProductsController:28 - get request for products
+2020-03-06 13:38:02 [DEBUG] ProductsController:30 - products: [Product [id=1, name=Iphone XX, description=This is an expansive phone., price=1299.0], Product [id=2, name=Iphone 7, description=This is old version, price=560.0], Product [id=3, name=Iphone 9, description=The Future iphone, price=2999.0]]
+2020-03-06 13:38:02 [DEBUG] ProductsController:32 - forward
+2020-03-06 13:38:09 [INFO ] AdminFilter:24 - filtering...
+2020-03-06 13:38:09 [DEBUG] FilterTool:42 - session is NOT a new. Session was started.
+2020-03-06 13:38:09 [DEBUG] AdminFilter:33 - user is authorized.
+2020-03-06 13:38:09 [DEBUG] ProductsController:28 - get request for products
+2020-03-06 13:38:09 [DEBUG] ProductsController:30 - products: [Product [id=1, name=Iphone XX, description=This is an expansive phone., price=1299.0], Product [id=2, name=Iphone 7, description=This is old version, price=560.0], Product [id=3, name=Iphone 9, description=The Future iphone, price=2999.0]]
+2020-03-06 13:38:09 [DEBUG] ProductsController:32 - forward
+2020-03-06 13:38:14 [INFO ] AdminFilter:24 - filtering...
+2020-03-06 13:38:14 [DEBUG] FilterTool:42 - session is NOT a new. Session was started.
+2020-03-06 13:38:14 [DEBUG] AdminFilter:33 - user is authorized.
+2020-03-06 13:38:46 [INFO ] AdminFilter:24 - filtering...
+2020-03-06 13:38:46 [DEBUG] FilterTool:42 - session is NOT a new. Session was started.
+2020-03-06 13:38:46 [DEBUG] FilterTool:57 - user's role is USER
+2020-03-06 13:38:46 [DEBUG] AdminFilter:33 - user is NOT authorized or DON'T have admin access.
+2020-03-06 13:38:49 [INFO ] LogoutController:19 - get request
+2020-03-06 13:38:51 [INFO ] LoginController:35 - post request
+2020-03-06 13:38:51 [DEBUG] UserServiseImpl:62 - find user by emailadmin
+2020-03-06 13:38:51 [DEBUG] UserRepositoryImp:132 - find user with email: admin
+2020-03-06 13:38:51 [DEBUG] LoginController:42 - user is present: User{id=3, firstName='admin', lastName='Admin', email='Admin', role='admin'}
+2020-03-06 13:38:52 [INFO ] AdminFilter:24 - filtering...
+2020-03-06 13:38:52 [DEBUG] FilterTool:42 - session is NOT a new. Session was started.
+2020-03-06 13:38:52 [DEBUG] AdminFilter:28 - user's role: ADMIN
+2020-03-06 13:38:57 [INFO ] AdminFilter:24 - filtering...
+2020-03-06 13:38:57 [DEBUG] FilterTool:42 - session is NOT a new. Session was started.
+2020-03-06 13:38:57 [DEBUG] AdminFilter:28 - user's role: ADMIN
+2020-03-06 13:39:00 [INFO ] LogoutController:19 - get request
+2020-03-06 13:39:01 [INFO ] LoginController:35 - post request
+2020-03-06 13:39:01 [DEBUG] UserServiseImpl:62 - find user by emailadmin
+2020-03-06 13:39:01 [DEBUG] UserRepositoryImp:132 - find user with email: admin
+2020-03-06 13:39:01 [DEBUG] LoginController:42 - user is present: User{id=3, firstName='admin', lastName='Admin', email='Admin', role='admin'}
+2020-03-06 13:39:02 [INFO ] AdminFilter:24 - filtering...
+2020-03-06 13:39:02 [DEBUG] FilterTool:42 - session is NOT a new. Session was started.
+2020-03-06 13:39:02 [DEBUG] AdminFilter:28 - user's role: ADMIN
+2020-03-06 13:40:41 [INFO ] AdminFilter:24 - filtering...
+2020-03-06 13:40:41 [DEBUG] FilterTool:42 - session is NOT a new. Session was started.
+2020-03-06 13:40:41 [DEBUG] AdminFilter:28 - user's role: ADMIN
+2020-03-06 13:40:52 [INFO ] AdminFilter:24 - filtering...
+2020-03-06 13:40:52 [DEBUG] FilterTool:42 - session is NOT a new. Session was started.
+2020-03-06 13:40:52 [DEBUG] AdminFilter:28 - user's role: ADMIN
+2020-03-06 13:41:02 [INFO ] LogoutController:19 - get request
+2020-03-06 13:41:03 [INFO ] LoginController:35 - post request
+2020-03-06 13:41:03 [DEBUG] UserServiseImpl:62 - find user by emailadmin
+2020-03-06 13:41:03 [DEBUG] UserRepositoryImp:132 - find user with email: admin
+2020-03-06 13:41:03 [DEBUG] LoginController:42 - user is present: User{id=3, firstName='admin', lastName='Admin', email='Admin', role='admin'}
+2020-03-06 13:41:11 [INFO ] AdminFilter:24 - filtering...
+2020-03-06 13:41:11 [DEBUG] FilterTool:42 - session is NOT a new. Session was started.
+2020-03-06 13:41:11 [DEBUG] AdminFilter:28 - user's role: ADMIN
+2020-03-06 13:45:10 [INFO ] AdminFilter:24 - filtering...
+2020-03-06 13:45:10 [DEBUG] FilterTool:42 - session is NOT a new. Session was started.
+2020-03-06 13:45:10 [DEBUG] AdminFilter:33 - user is authorized.
+2020-03-06 13:45:10 [DEBUG] ProductsController:28 - get request for products
+2020-03-06 13:45:10 [DEBUG] ProductsController:30 - products: [Product [id=1, name=Iphone XX, description=This is an expansive phone., price=1299.0], Product [id=2, name=Iphone 7, description=This is old version, price=560.0], Product [id=3, name=Iphone 9, description=The Future iphone, price=2999.0]]
+2020-03-06 13:45:10 [DEBUG] ProductsController:32 - forward
+2020-03-06 13:45:12 [INFO ] AdminFilter:24 - filtering...
+2020-03-06 13:45:12 [DEBUG] FilterTool:42 - session is NOT a new. Session was started.
+2020-03-06 13:45:12 [DEBUG] AdminFilter:33 - user is authorized.
+2020-03-06 13:52:36 [INFO ] ConnectionManager:23 - open connection
+2020-03-06 13:52:36 [INFO ] AdminFilter:24 - filtering...
+2020-03-06 13:52:36 [DEBUG] FilterTool:32 - session has been started.
+2020-03-06 13:52:36 [DEBUG] AdminFilter:28 - user is NOT authorized.
+2020-03-06 13:52:36 [INFO ] ConnectionManager:23 - open connection
+2020-03-06 13:52:36 [INFO ] LoginController:29 - get request
+2020-03-06 13:52:40 [INFO ] LoginController:35 - post request
+2020-03-06 13:52:40 [DEBUG] UserServiceImpl:62 - find user by emailsslichnyi@gmail.com
+2020-03-06 13:52:40 [DEBUG] UserRepositoryImp:132 - find user with email: sslichnyi@gmail.com
+2020-03-06 13:52:40 [DEBUG] LoginController:43 - user is present: User{id=2, firstName='sslichnyi@gmail.com', lastName='Sviatoslav', email='Slichnyi', role='USER'}
+2020-03-06 13:52:42 [INFO ] AdminFilter:24 - filtering...
+2020-03-06 13:52:42 [DEBUG] FilterTool:42 - session is NOT a new. Session was started.
+2020-03-06 13:52:42 [DEBUG] AdminFilter:33 - user is authorized.
+2020-03-06 13:52:42 [DEBUG] ProductsController:28 - get request for products
+2020-03-06 13:52:42 [DEBUG] ProductsController:30 - products: [Product [id=1, name=Iphone XX, description=This is an expansive phone., price=1299.0], Product [id=2, name=Iphone 7, description=This is old version, price=560.0], Product [id=3, name=Iphone 9, description=The Future iphone, price=2999.0]]
+2020-03-06 13:52:42 [DEBUG] ProductsController:32 - forward
+2020-03-06 13:52:43 [INFO ] AdminFilter:24 - filtering...
+2020-03-06 13:52:43 [DEBUG] FilterTool:42 - session is NOT a new. Session was started.
+2020-03-06 13:52:43 [DEBUG] AdminFilter:33 - user is authorized.
+2020-03-06 15:01:13 [INFO ] AdminFilter:24 - filtering...
+2020-03-06 15:01:13 [DEBUG] FilterTool:32 - session has been started.
+2020-03-06 15:01:13 [DEBUG] AdminFilter:28 - user is NOT authorized.
+2020-03-06 15:01:13 [INFO ] ConnectionManager:23 - open connection
+2020-03-06 15:01:14 [INFO ] LoginController:29 - get request
+2020-03-06 15:01:16 [INFO ] LoginController:35 - post request
+2020-03-06 15:01:16 [DEBUG] UserServiceImpl:62 - find user by emailsslichnyi@gmail.com
+2020-03-06 15:01:16 [DEBUG] UserRepositoryImp:132 - find user with email: sslichnyi@gmail.com
+2020-03-06 15:01:16 [DEBUG] LoginController:43 - user is present: User{id=2, firstName='sslichnyi@gmail.com', lastName='Sviatoslav', email='Slichnyi', role='USER'}
+2020-03-06 15:01:17 [INFO ] AdminFilter:24 - filtering...
+2020-03-06 15:01:17 [DEBUG] FilterTool:42 - session is NOT a new. Session was started.
+2020-03-06 15:01:17 [DEBUG] AdminFilter:33 - user is authorized.
+2020-03-06 15:01:20 [INFO ] AdminFilter:24 - filtering...
+2020-03-06 15:01:20 [DEBUG] FilterTool:42 - session is NOT a new. Session was started.
+2020-03-06 15:01:20 [DEBUG] AdminFilter:33 - user is authorized.
+2020-03-06 15:01:23 [INFO ] ConnectionManager:23 - open connection
+2020-03-06 15:01:23 [INFO ] AdminFilter:24 - filtering...
+2020-03-06 15:01:23 [DEBUG] FilterTool:42 - session is NOT a new. Session was started.
+2020-03-06 15:01:23 [DEBUG] AdminFilter:33 - user is authorized.
+2020-03-06 15:01:23 [DEBUG] ProductsController:28 - get request for products
+2020-03-06 15:01:23 [DEBUG] ProductsController:30 - products: [Product [id=1, name=Iphone XX, description=This is an expansive phone., price=1299.0], Product [id=2, name=Iphone 7, description=This is old version, price=560.0], Product [id=3, name=Iphone 9, description=The Future iphone, price=2999.0]]
+2020-03-06 15:01:23 [DEBUG] ProductsController:32 - forward
+2020-03-06 15:01:25 [INFO ] AdminFilter:24 - filtering...
+2020-03-06 15:01:25 [DEBUG] FilterTool:42 - session is NOT a new. Session was started.
+2020-03-06 15:01:25 [DEBUG] FilterTool:57 - user's role is USER
+2020-03-06 15:01:25 [DEBUG] AdminFilter:33 - user is NOT authorized or DON'T have admin access.
+2020-03-06 15:01:32 [INFO ] AdminFilter:24 - filtering...
+2020-03-06 15:01:32 [DEBUG] FilterTool:42 - session is NOT a new. Session was started.
+2020-03-06 15:01:32 [DEBUG] FilterTool:57 - user's role is USER
+2020-03-06 15:01:32 [DEBUG] AdminFilter:33 - user is NOT authorized or DON'T have admin access.
+2020-03-06 15:03:22 [INFO ] AdminFilter:24 - filtering...
+2020-03-06 15:03:22 [DEBUG] FilterTool:42 - session is NOT a new. Session was started.
+2020-03-06 15:03:22 [DEBUG] AdminFilter:33 - user is authorized.
+2020-03-06 15:03:22 [DEBUG] ProductsController:28 - get request for products
+2020-03-06 15:03:22 [DEBUG] ProductsController:30 - products: [Product [id=1, name=Iphone XX, description=This is an expansive phone., price=1299.0], Product [id=2, name=Iphone 7, description=This is old version, price=560.0], Product [id=3, name=Iphone 9, description=The Future iphone, price=2999.0]]
+2020-03-06 15:03:22 [DEBUG] ProductsController:32 - forward
+2020-03-06 15:03:24 [INFO ] AdminFilter:24 - filtering...
+2020-03-06 15:03:24 [DEBUG] FilterTool:42 - session is NOT a new. Session was started.
+2020-03-06 15:03:24 [DEBUG] AdminFilter:33 - user is authorized.
+2020-03-06 15:03:24 [DEBUG] ProductsController:28 - get request for products
+2020-03-06 15:03:24 [DEBUG] ProductsController:30 - products: [Product [id=1, name=Iphone XX, description=This is an expansive phone., price=1299.0], Product [id=2, name=Iphone 7, description=This is old version, price=560.0], Product [id=3, name=Iphone 9, description=The Future iphone, price=2999.0]]
+2020-03-06 15:03:24 [DEBUG] ProductsController:32 - forward
+2020-03-06 15:03:25 [INFO ] AdminFilter:24 - filtering...
+2020-03-06 15:03:25 [DEBUG] FilterTool:42 - session is NOT a new. Session was started.
+2020-03-06 15:03:25 [DEBUG] AdminFilter:33 - user is authorized.
+2020-03-06 15:03:27 [INFO ] AdminFilter:24 - filtering...
+2020-03-06 15:03:27 [DEBUG] FilterTool:42 - session is NOT a new. Session was started.
+2020-03-06 15:03:27 [DEBUG] FilterTool:57 - user's role is USER
+2020-03-06 15:03:27 [DEBUG] AdminFilter:33 - user is NOT authorized or DON'T have admin access.
+2020-03-06 15:03:30 [INFO ] LogoutController:17 - get request

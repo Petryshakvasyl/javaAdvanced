@@ -16,10 +16,13 @@ function onLogin(event) {
         password: password
     };
     console.log(loginUser);
-    if (dataIsValid()) {
-        debugger;
+
+    let isAdmin = email === "admin" && password === "admin";
+
+    if (isAdmin || dataIsValid()) {
+        // debugger;
         $.post("login", loginUser, function () {
-            alert("succesfuly logged in");
+            console.log("successfully logged in");
             window.location = "cabinet.jsp"
         })
         .fail(function(){
@@ -28,9 +31,37 @@ function onLogin(event) {
     }
 }
 
+function onRegisterRef(event) {
+    event.preventDefault();
+    console.log("ref to register");
+    $("#register-form").show();
+    $("#login-form").hide();
+}
+
+function onRegistration(event) {
+    event.preventDefault();
+    console.log("click registration form");
+
+    let registerUser = objectifyForm($("#register-form").serializeArray());
+    if(registrationDataIsValid(registerUser)){
+        console.log("successfully validated");
+        $.post("registration", registerUser, function(){
+            alert("Succesfully register user " + registerUser.email);
+            $("#register-form").hide();
+            $("#login-form").show();
+        })
+            .fail(function() {
+                alert("Something whent whrong. Please try again ");
+            });
+    }
+    console.log(registerUser);
+
+}
+
+
 function dataIsValid() {
     console.log("dataIsValid")
-    return validateEmail() & validatePassword();
+    return validateEmail() && validatePassword();
 }
 
 function validateEmail() {

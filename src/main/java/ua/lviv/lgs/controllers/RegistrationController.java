@@ -3,7 +3,7 @@ package ua.lviv.lgs.controllers;
 import org.apache.log4j.Logger;
 import ua.lviv.lgs.domain.User;
 import ua.lviv.lgs.service.UserService;
-import ua.lviv.lgs.service.impl.UserServiseImpl;
+import ua.lviv.lgs.service.impl.UserServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,7 +21,7 @@ public class RegistrationController extends HttpServlet {
     private UserService userService;
 
     public RegistrationController() {
-        userService = UserServiseImpl.getInstance();
+        userService = UserServiceImpl.getInstance();
     }
 
     @Override
@@ -31,7 +31,7 @@ public class RegistrationController extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
         log.info("post request");
 
         String email = req.getParameter("email");

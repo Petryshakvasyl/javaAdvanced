@@ -1,4 +1,4 @@
-package ua.lviv.lgs.controllers;
+package ua.lviv.lgs.controllers.admin;
 
 import org.apache.log4j.Logger;
 import ua.lviv.lgs.domain.Product;
@@ -12,47 +12,40 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/admin/products")
-public class AdminProductsController extends HttpServlet {
+@WebServlet("/admin/create-product")
+public class CreateProductController extends HttpServlet {
 
-    private Logger log = Logger.getLogger(AdminProductsController.class);
+    private Logger log = Logger.getLogger(CreateProductController.class);
     private ProductService productService;
 
-    public AdminProductsController() {
+    public CreateProductController() {
         productService = ProductServiceImpl.getInstance();
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         log.debug("get request for admin add product page");
-        String role = (String) req.getSession().getAttribute("role");
-        if (role != "ADMIN") {
-            resp.setStatus(403);
-        }
-        req.getRequestDispatcher("/create-product.jsp").forward(req, resp);
+        req.getRequestDispatcher("/admin/create-product.jsp").forward(req, resp);
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String role = (String) req.getSession().getAttribute("role");
-        if (role != "ADMIN") {
-            resp.setStatus(403);
-
-        }
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String name = req.getParameter("name");
         String description = req.getParameter("description");
         String price = req.getParameter("price");
 
-        if (isDavaValid(name, description, price)) {
+        if (isDataValid(name, description, price)) {
             log.debug(" data is valid");
             Product product = new Product(name, description, Double.parseDouble(price));
             log.debug(" create new product");
             productService.save(product);
-            resp.sendRedirect("products");
+            resp.sendRedirect("../products");
+        } else {
+            resp.setStatus(402);
         }
     }
 
-    private boolean isDavaValid(String name, String description, String price) {
+    private boolean isDataValid(String name, String description, String price) {
         return name != null && description != null && price != null;
     }
 }

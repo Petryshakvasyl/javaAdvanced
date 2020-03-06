@@ -26,7 +26,7 @@ public class BuyController extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
         String id = req.getParameter("id");
         log.debug("id: " + id);
         int userId = (int) req.getSession().getAttribute("userId");

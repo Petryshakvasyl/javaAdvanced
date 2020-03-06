@@ -9,20 +9,20 @@ import ua.lviv.lgs.service.UserService;
 import java.util.List;
 import java.util.Optional;
 
-public class UserServiseImpl implements UserService {
+public class UserServiceImpl implements UserService {
 
-    Logger log = Logger.getLogger(UserServiseImpl.class);
+    Logger log = Logger.getLogger(UserServiceImpl.class);
 
     private UserRepository userRepository;
-    private static UserServiseImpl userServise;
+    private static UserServiceImpl userServise;
 
-    private UserServiseImpl() {
+    private UserServiceImpl() {
         userRepository = UserRepositoryImp.getInstance();
     }
 
-    public static UserServiseImpl getInstance() {
+    public static UserServiceImpl getInstance() {
         if (userServise == null) {
-            userServise = new UserServiseImpl();
+            userServise = new UserServiceImpl();
         }
         return userServise;
     }
