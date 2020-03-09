@@ -1,8 +1,8 @@
 package ua.lviv.lgs.controllers.filter;
 
 import org.apache.log4j.Logger;
-import ua.lviv.lgs.service.FilterTool;
-import ua.lviv.lgs.service.impl.FilterToolImpl;
+import ua.lviv.lgs.service.tool.FilterTool;
+import ua.lviv.lgs.service.tool.impl.FilterToolImpl;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
@@ -13,6 +13,8 @@ public class AuthorizationFilter implements Filter {
 
     private final Logger log = Logger.getLogger(AdminFilter.class);
     private static final String LOGIN_PAGE = "/login";
+    private FilterTool filterTool;
+
 
     @Override
     public void init(FilterConfig filterConfig) {
@@ -22,7 +24,7 @@ public class AuthorizationFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         log.info("filtering...");
-        FilterTool filterTool = new FilterToolImpl(request, response);
+        filterTool = new FilterToolImpl(request, response);
 
         if (!filterTool.isAuthorized()) {
             log.debug("user is NOT authorized.");

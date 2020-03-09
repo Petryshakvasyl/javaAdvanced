@@ -11,7 +11,5 @@
         crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-
-<link rel="stylesheet" href="resources/css/style.css">
-<script src="resources/js/navbar.js"></script>
-<script src="resources/js/script.js"></script>
+<link rel="stylesheet" href="/ishop/resources/css/style.css">
+<script src="/ishop/resources/js/script.js"></script>
