@@ -16,5 +16,9 @@
         <!-- Echo the SQL to stdout -->
         <property name="hibernate.show_sql">true</property>
         <mapping class="ua.lviv.lgs.entity.User"/>
+        <mapping class="ua.lviv.lgs.onetoone.Customer"/>
+        <mapping class="ua.lviv.lgs.onetoone.FinancialOperation"/>
+        <mapping class="ua.lviv.lgs.onetomany.Cart"/>
+        <mapping class="ua.lviv.lgs.onetomany.Item"/>
     </session-factory>
 </hibernate-configuration>
