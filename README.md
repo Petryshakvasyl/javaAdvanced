@@ -11,3 +11,5 @@
 * [lesson-09](https://github.com/Petryshakvasyl/javaAdvanced/tree/lesson-9)  (i_shop(final))
 * [lesson-10](https://github.com/Petryshakvasyl/javaAdvanced/tree/lesson-10)  (git-advanced)
 * [lesson-12](https://github.com/Petryshakvasyl/javaAdvanced/tree/lesson-12)  (JPA)
+* [lesson-13](https://github.com/Petryshakvasyl/javaAdvanced/tree/lesson-13)  (hibernate)
+* [lesson-14](https://github.com/Petryshakvasyl/javaAdvanced/tree/lesson-14)  (hibernate mapping)
