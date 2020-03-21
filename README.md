@@ -13,3 +13,5 @@
 * [lesson-12](https://github.com/Petryshakvasyl/javaAdvanced/tree/lesson-12)  (JPA)
 * [lesson-13](https://github.com/Petryshakvasyl/javaAdvanced/tree/lesson-13)  (hibernate)
 * [lesson-14](https://github.com/Petryshakvasyl/javaAdvanced/tree/lesson-14)  (hibernate mapping)
+* [lesson-15](https://github.com/Petryshakvasyl/javaAdvanced/tree/lesson-15)  (spring core)
+* [lesson-16](https://github.com/Petryshakvasyl/javaAdvanced/tree/lesson-16)  (spring data jpa)
