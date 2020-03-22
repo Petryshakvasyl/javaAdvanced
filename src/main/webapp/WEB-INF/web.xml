@@ -9,7 +9,7 @@
 
     <servlet>
         <servlet-name>admin</servlet-name>
-        <servlet-class>ua.lviv.lgs.jpa.controllers.admin.CreateProductController</servlet-class>
+        <servlet-class>ua.lviv.lgs.controllers.admin.CreateProductController</servlet-class>
     </servlet>
 
     <servlet-mapping>
