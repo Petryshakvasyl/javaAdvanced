@@ -44,4 +44,8 @@ public class StudentServiceImpl implements StudentService {
         return studentRepository.findByCourse(cource);
     }
 
+    @Override
+    public Student update(Student student) {
+        return studentRepository.save(student);
+    }
 }

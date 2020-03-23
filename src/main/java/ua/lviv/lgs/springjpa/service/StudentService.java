@@ -17,4 +17,5 @@ public interface StudentService {
 
     List<Student> findByCource(int cource);
 
+    Student update(Student student);
 }
