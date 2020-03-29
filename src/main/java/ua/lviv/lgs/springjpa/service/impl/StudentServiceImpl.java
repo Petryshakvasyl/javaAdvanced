@@ -1,8 +1,9 @@
-package ua.lviv.lgs.springjpa.service;
+package ua.lviv.lgs.springjpa.service.impl;
 
 import org.springframework.stereotype.Service;
 import ua.lviv.lgs.springjpa.entity.Student;
 import ua.lviv.lgs.springjpa.repository.StudentRepository;
+import ua.lviv.lgs.springjpa.service.StudentService;
 
 import java.util.ArrayList;
 import java.util.List;

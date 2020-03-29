@@ -1,11 +1,14 @@
-package ua.lviv.lgs.springjpa.service;
+package ua.lviv.lgs.springjpa.service.impl;
 
+import org.springframework.stereotype.Service;
 import ua.lviv.lgs.springjpa.entity.Group;
 import ua.lviv.lgs.springjpa.repository.GroupRepository;
+import ua.lviv.lgs.springjpa.service.GroupService;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class GroupServiceImpl implements GroupService {
 
     private final GroupRepository groupRepository;
@@ -31,7 +34,7 @@ public class GroupServiceImpl implements GroupService {
 
     @Override
     public void deleteById(Integer id) {
-        groupRepository.findById(id);
+        groupRepository.deleteById(id);
     }
 
     @Override
