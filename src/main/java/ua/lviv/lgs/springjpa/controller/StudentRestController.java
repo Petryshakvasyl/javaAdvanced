@@ -6,6 +6,7 @@ import ua.lviv.lgs.springjpa.exceptions.BadRequestException;
 import ua.lviv.lgs.springjpa.exceptions.NotFoundException;
 import ua.lviv.lgs.springjpa.service.StudentService;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -29,12 +30,12 @@ public class StudentRestController {
     }
 
     @PostMapping("/students")
-    public Student createStudent(@RequestBody Student student) {
+    public Student createStudent(@Valid @RequestBody Student student) {
         return studentService.create(student);
     }
 
     @PutMapping("/students")
-    public Student updateStudent(@RequestBody Student student) {
+    public Student updateStudent(@Valid @RequestBody Student student) {
         if (student.getId() == null) {
             throw new BadRequestException("cannot update student without id");
         }

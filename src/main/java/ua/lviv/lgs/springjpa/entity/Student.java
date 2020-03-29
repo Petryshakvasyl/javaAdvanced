@@ -2,14 +2,14 @@ package ua.lviv.lgs.springjpa.entity;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 @Data
 @Entity
+@Table(name = "student")
 public class Student {
 
     @Id
@@ -25,6 +25,8 @@ public class Student {
     private String lastName;
 
     @NotNull
+    @Min(1)
+    @Max(6)
     @Column(nullable = false)
     private int course;
 
