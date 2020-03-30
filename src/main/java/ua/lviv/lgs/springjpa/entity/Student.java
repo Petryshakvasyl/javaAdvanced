@@ -30,4 +30,5 @@ public class Student {
     @Column(nullable = false)
     private int course;
 
+
 }
