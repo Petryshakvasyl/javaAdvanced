@@ -9,4 +9,7 @@ public interface GroupRepository extends JpaRepository<Group, Integer> {
 
     Optional<Group> findByName(String name);
 
+    //    @Query("select g.students from ua.lviv.lgs.springjpa.entity.Group g where g.groupId = ?1")
+    //    Set<Student> findGroupsStudents(Integer groupId);
+
 }
