@@ -27,8 +27,10 @@ public class MediaController {
     @GetMapping("/{name}")
     public ResponseEntity<Resource> getFile(@PathVariable String name) {
         Media media = mediaService.findByName(name);
-        return ResponseEntity.status(HttpStatus.OK).contentType(MediaType.IMAGE_JPEG).body(
-                new ByteArrayResource(media.getData()));
+
+        return ResponseEntity.status(HttpStatus.OK)
+                .contentType(MediaType.parseMediaType(media.getType()))
+                .body(new ByteArrayResource(media.getData()));
     }
 
 }

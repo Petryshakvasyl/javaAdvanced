@@ -30,5 +30,7 @@ public class Student {
     @Column(nullable = false)
     private int course;
 
+    @OneToOne
+    private Media media;
 
 }
