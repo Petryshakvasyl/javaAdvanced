@@ -15,3 +15,7 @@
 * [lesson-14](https://github.com/Petryshakvasyl/javaAdvanced/tree/lesson-14)  (hibernate mapping)
 * [lesson-15](https://github.com/Petryshakvasyl/javaAdvanced/tree/lesson-15)  (spring core)
 * [lesson-16](https://github.com/Petryshakvasyl/javaAdvanced/tree/lesson-16)  (spring data jpa)
+* [lesson-17](https://github.com/Petryshakvasyl/javaAdvanced/tree/lesson-17)  (spring MVC)
+* [lesson-18](https://github.com/Petryshakvasyl/javaAdvanced/tree/lesson-18)  (Spring REST)
+* [lesson-19](https://github.com/Petryshakvasyl/javaAdvanced/tree/lesson-19)  (Spring file upload)
+* [lesson-20](https://github.com/Petryshakvasyl/javaAdvanced/tree/lesson-20)  (Spring security)
