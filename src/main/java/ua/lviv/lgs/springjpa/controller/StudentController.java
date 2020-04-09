@@ -1,5 +1,6 @@
 package ua.lviv.lgs.springjpa.controller;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,12 +28,14 @@ public class StudentController {
     }
 
     @PostMapping("/students/create")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String createStudent(@ModelAttribute Student student) {
         studentService.create(student);
         return "redirect:/students";
     }
 
     @PostMapping("/students/update")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String updateStudent(@ModelAttribute Student student) {
         studentService.update(student);
         return "redirect:/students";
@@ -52,6 +55,7 @@ public class StudentController {
     }
 
     @GetMapping("/students/delete")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public String deleteStudent(@RequestParam Integer id) {
         try {
             studentService.deleteById(id);
